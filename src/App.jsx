@@ -8,9 +8,9 @@ import Recharge from "./Components/Recharge";
 import TransactionHistory from "./Components/TransactionHistory";
 import Profile from "./Components/Profile";
 import Support from "./Components/Support";
-
-
-
+import Wallet from "./Components/Wallet";
+import BillPayments from "./Components/BillPayments";
+import Rewards from "./Components/Rewards";
 
 const App = () => {
   return (
@@ -24,6 +24,10 @@ const App = () => {
         <Route path="/transactions" element={<TransactionHistory/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/support" element={<Support/>} />
+        <Route path="/wallet" element={<Wallet/>} />
+        <Route path="/bills" element={<BillPayments/>} />
+        <Route path="/rewards" element={<Rewards/>} />
+        
       </Routes>
     </Router>
     

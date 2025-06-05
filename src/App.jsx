@@ -5,6 +5,12 @@ import SendMoney from "./Components/SendMoney";
 import ScanPay from "./Components/Scanpay";
 import Offers from "./Components/Offers";
 import Recharge from "./Components/Recharge";
+import TransactionHistory from "./Components/TransactionHistory";
+import Profile from "./Components/Profile";
+import Support from "./Components/Support";
+
+
+
 
 const App = () => {
   return (
@@ -15,6 +21,9 @@ const App = () => {
         <Route path="/scan-pay" element={<ScanPay />} />
         <Route path="/recharge" element={<Recharge/>} />
         <Route path="/offers" element={<Offers />} />
+        <Route path="/transactions" element={<TransactionHistory/>} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/support" element={<Support/>} />
       </Routes>
     </Router>
     

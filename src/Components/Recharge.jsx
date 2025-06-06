@@ -3,15 +3,28 @@ import React, { useState } from "react";
 const Recharge = () => {
   const [mobile, setMobile] = useState("");
   const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleRecharge = () => {
-    alert(`Recharge of ₹${amount} is being processed for ${mobile}`);
+    if (!mobile || !amount) {
+      setMessage("please enter both mobile number and amount.");
+    } else {
+      setMessage(`Recharge of ₹${amount} is being processed for ${mobile}`);
+      setMobile("");
+      setAmount("");
+    }
   };
+
+  // const handleRecharge = () => {
+  //   alert(`Recharge of ₹${amount} is being processed for ${mobile}`);
+  // };
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="bg-white p-6 rounded shadow max-w-md mx-auto">
-        <h2 className="text-2xl font-bold text-blue-600 mb-4">Mobile Recharge</h2>
+        <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">
+          Mobile Recharge
+        </h2>
         <input
           type="tel"
           placeholder="Enter Mobile Number"
@@ -32,6 +45,9 @@ const Recharge = () => {
         >
           Recharge Now
         </button>
+        {message && (
+          <p className="text-red-500 mt-4 font-medium">{message}</p>
+        )}
       </div>
     </div>
   );

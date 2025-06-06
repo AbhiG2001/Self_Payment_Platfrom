@@ -28,18 +28,20 @@ const offersList = [
 ];
 
 
-const Offers = () => {
+const Offers = () => {             
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold text-blue-600 mb-4">Latest Offers</h2>
+        <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">Latest Offers</h2>
         {offersList.map((offer, index) => (
           <div
+            
             key={index}
             className="bg-white p-4 rounded shadow mb-4 hover:shadow-md transition"
           >
-            <h3 className="text-lg font-semibold text-gray-800">{offer.title}</h3>
-            <p className="text-gray-600">{offer.desc}</p>
+            <h3 style={{fontFamily: 'Montserrat, sans-serif'}}            
+ className="text-lg font-semibold text-gray-800">{offer.title}</h3>
+            <p style={{fontFamily: 'Montserrat, sans-serif'}} className="text-gray-600">{offer.desc}</p>
           </div>
         ))}
       </div>

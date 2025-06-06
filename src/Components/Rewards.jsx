@@ -1,20 +1,37 @@
 import React from "react";
+import "./Rewards.css"
 
 const rewards = [
-  { id: 1, title: "Scratch Card Won", amount: "₹10" },
-  { id: 2, title: "UPI Cashback", amount: "₹25" },
-  { id: 3, title: "Electricity Bill Cashback", amount: "₹50" },
+  {
+    id: 1,
+    title: "Scratch Card Won",
+    amount: "₹10",
+    desc: "Earned by paying at a local merchant via QR.",
+  },
+  {
+    id: 2,
+    title: "UPI Cashback",
+    amount: "₹25",
+    desc: "Received on first UPI transaction this week.",
+  },
+  {
+    id: 3,
+    title: "Electricity Bill Cashback",
+    amount: "₹50",
+    desc: "Cashback for paying electricity bill via UPI.",
+  },
 ];
 
 const Rewards = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h2 className="text-2xl font-bold text-blue-600 mb-4">My Rewards</h2>
-      <div className="space-y-4">
+    <div className="container">
+      <h2 className="heading">My Rewards</h2>
+      <div className="list">
         {rewards.map((reward) => (
-          <div key={reward.id} className="bg-white p-4 rounded shadow">
-            <p className="font-semibold">{reward.title}</p>
-            <p className="text-green-600">+ {reward.amount}</p>
+          <div key={reward.id} className="card">
+            <p className="title">{reward.title}</p>
+            <p className="desc">{reward.desc}</p>
+            <p className="amount">+{reward.amount}</p>
           </div>
         ))}
       </div>

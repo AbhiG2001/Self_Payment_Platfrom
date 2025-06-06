@@ -19,10 +19,10 @@ const Sendmoney = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto">
-      <h2 className="text-2xl text-blue-600 font-bold mb-6">Send Money</h2>
+    <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto" >
+      <h2 style={{fontFamily:"monospace"}}  className="text-2xl text-blue-600  mb-6 font-bold">Send Money</h2>
       <div>
-        <label className="block text-gray-700 font-medium" htmlFor="">
+        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium" htmlFor="">
           Recipient (UPI ID or Phone)
         </label>
         <input
@@ -34,7 +34,7 @@ const Sendmoney = () => {
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium">Amount (₹)</label>
+        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium">Amount (₹)</label>
         <input
           type="number"
           value={amount}
@@ -44,7 +44,7 @@ const Sendmoney = () => {
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium">
+        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium">
           Note (optional)
         </label>
         <input
@@ -57,12 +57,12 @@ const Sendmoney = () => {
       </div>
       <button
         onClick={handleSend}
-        className="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700 transition"
+        className="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700 transition mt-4"
       >
         Send Money
       </button>
       {message && (
-        <p className="text-green-600 font-semibold text-center mt-4">
+        <p className="text-green-500 text-xl font-semibold text-center mt-4">
           {message}
         </p>
       )}

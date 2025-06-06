@@ -5,7 +5,12 @@ const BillPayments = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h2 className="text-2xl font-bold text-blue-600 mb-4">Bill Payments</h2>
+      <h2
+        style={{ fontFamily: "monospace" }}
+        className="text-2xl font-bold text-blue-600 mb-4"
+      >
+        Bill Payments
+      </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {bills.map((bill, index) => (
           <div

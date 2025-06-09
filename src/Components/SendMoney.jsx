@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const Sendmoney = () => {
   const [recipient, setRecipient] = useState("");
@@ -11,7 +16,6 @@ const Sendmoney = () => {
       setMessage("Please enter both recipient and amount.");
     } else {
       setMessage(`₹${amount} sent to ${recipient} successfully!`);
-      // Reset inputs
       setRecipient("");
       setAmount("");
       setNote("");
@@ -19,10 +23,22 @@ const Sendmoney = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto" >
-      <h2 style={{fontFamily:"monospace"}}  className="text-2xl text-blue-600  mb-6 font-bold">Send Money</h2>
+    <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto">
+      {/* <h2 style={{fontFamily:"monospace"}}  className="text-2xl text-blue-600  mb-6 font-bold">Send Money</h2> */}
+      <BlurText
+        text="Send Money"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono "
+      />
       <div>
-        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium" htmlFor="">
+        <label
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="block text-gray-700 font-medium"
+          htmlFor=""
+        >
           Recipient (UPI ID or Phone)
         </label>
         <input
@@ -34,7 +50,12 @@ const Sendmoney = () => {
         />
       </div>
       <div>
-        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium">Amount (₹)</label>
+        <label
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="block text-gray-700 font-medium"
+        >
+          Amount (₹)
+        </label>
         <input
           type="number"
           value={amount}
@@ -44,7 +65,10 @@ const Sendmoney = () => {
         />
       </div>
       <div>
-        <label style={{fontFamily: 'Montserrat, sans-serif'}} className="block text-gray-700 font-medium">
+        <label
+          style={{ fontFamily: "Montserrat, sans-serif" }}
+          className="block text-gray-700 font-medium"
+        >
           Note (optional)
         </label>
         <input

@@ -1,4 +1,9 @@
 import React from "react";
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const transactions = [
   { id: 1, type: "Recharge", amount: "₹199", date: "2025-06-04" },
@@ -8,7 +13,15 @@ const transactions = [
 
 const TransactionHistory = () => (
   <div className="min-h-screen bg-gray-100 p-6">
-    <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">Transaction History</h2>
+    {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">Transaction History</h2> */}
+     <BlurText
+        text="Transactions History"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono"
+      />
     <div className="bg-white rounded shadow p-4 space-y-3">
       {transactions.map((txn) => (
         <div

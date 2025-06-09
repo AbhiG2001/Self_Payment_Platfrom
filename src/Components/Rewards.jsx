@@ -1,5 +1,10 @@
 import React from "react";
 import "./Rewards.css"
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const rewards = [
   {
@@ -25,7 +30,15 @@ const rewards = [
 const Rewards = () => {
   return (
     <div className="container">
-      <h2 className="heading">My Rewards</h2>
+      {/* <h2 className="heading">My Rewards</h2> */}
+      <BlurText
+        text="My Rewards"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono"
+      />
       <div className="list">
         {rewards.map((reward) => (
           <div key={reward.id} className="card">

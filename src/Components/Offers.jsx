@@ -1,4 +1,9 @@
 import React from "react";
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const offersList = [
   {
@@ -32,7 +37,15 @@ const Offers = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-2xl mx-auto">
-        <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">Latest Offers</h2>
+        {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">Latest Offers</h2> */}
+         <BlurText
+        text="Latest Offers"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono"
+      />
         {offersList.map((offer, index) => (
           <div
             

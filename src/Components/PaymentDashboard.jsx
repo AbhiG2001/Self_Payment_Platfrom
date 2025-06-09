@@ -1,5 +1,6 @@
 import React from "react";
 import SplitText from "../Components/SplitText";
+import { Navigate } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import sendmoney from "../assets/sendmoney.png";
@@ -10,14 +11,18 @@ import history from "../assets/history.png";
 import profile from "../assets/Profile.png";
 import support from "../assets/support.png";
 import wallet from "../assets/wallet.png";
-import bills from "../assets/Bill.png"
-import Rewards  from "../assets/rewards.png";
+import bills from "../assets/Bill.png";
+import Rewards from "../assets/rewards.png";
+import Notifications from "../assets/Notifications.png";
+import Signup from "../assets/Signup.jpg";
+import Dashboard from "../assets/Dashboard.png";
+import Login from "../assets/Login.png";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
 };
 const PaymentDashboard = () => {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   const services = [
     { title: "Send Money", icon: sendmoney, path: "/send-money" },
@@ -27,18 +32,24 @@ const PaymentDashboard = () => {
     { title: "Transaction History", icon: history, path: "/transactions" },
     { title: "My Profile", icon: profile, path: "/profile" },
     { title: "Support", icon: support, path: "/support" },
-     { title: "My Wallet", icon: wallet, path: "/wallet" },
+    { title: "My Wallet", icon: wallet, path: "/wallet" },
     { title: "Bill Payments", icon: bills, path: "/bills" },
     { title: "Rewards", icon: Rewards, path: "/rewards" },
+    { title: "Login", icon: Login, path: "/login" },
+    { title: "Signup", icon: Signup, path: "/signup" },
+    { title: "Dashboard", icon: Dashboard, path: "/dashboard" },
+    { title: "Notifications", icon: Notifications, path: "/notifications" },
   ];
 
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
   return (
     <div className="min-h-screen bg-gray-100 p-4">
       {/* Header */}
       <header className="w-full bg-white shadow p-4 rounded-lg flex justify-between items-center">
-        {/* <h1 className=" p-2 text-3xl  font-bold text-blue-600">
-          Pay<span className=" text-3xl text-red-600">Now</span>
-        </h1> */}
         <SplitText
           text="PayNow"
           className="text-3xl font-semibold text-center text-red-600"
@@ -53,7 +64,10 @@ const PaymentDashboard = () => {
           textAlign="center"
           onLetterAnimationComplete={handleAnimationComplete}
         />
-        <button className="text-xl bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition">
+        <button
+          onClick={handleLogin}
+          className="text-xl bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+        >
           Login
         </button>
       </header>

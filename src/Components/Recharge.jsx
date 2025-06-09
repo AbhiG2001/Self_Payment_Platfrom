@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const Recharge = () => {
   const [mobile, setMobile] = useState("");
@@ -22,9 +27,17 @@ const Recharge = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="bg-white p-6 rounded shadow max-w-md mx-auto">
-        <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">
+        {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">
           Mobile Recharge
-        </h2>
+        </h2> */}
+        <BlurText
+        text="Mobile Recharge"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono"
+      />
         <input
           type="tel"
           placeholder="Enter Mobile Number"

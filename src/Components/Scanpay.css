@@ -1,0 +1,93 @@
+.scanpay-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scanpay-box {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.scanpay-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 16px;
+  font-family: monospace;
+}
+
+.scanpay-description {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 16px;
+}
+
+.scanpay-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.scanpay-toggle-btn,
+.scanpay-submit-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.scanpay-toggle-btn {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.scanpay-toggle-btn:hover {
+  background-color: #d1d5db;
+}
+
+.scanpay-submit-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.scanpay-submit-btn:hover {
+  background-color: #1e40af;
+}
+
+.scanpay-message {
+  color: green;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .scanpay-box {
+    padding: 16px;
+  }
+
+  .scanpay-heading {
+    font-size: 20px;
+  }
+
+  .scanpay-input,
+  .scanpay-toggle-btn,
+  .scanpay-submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

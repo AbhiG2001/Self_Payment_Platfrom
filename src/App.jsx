@@ -11,6 +11,10 @@ import Support from "./Components/Support";
 import Wallet from "./Components/Wallet";
 import BillPayments from "./Components/BillPayments";
 import Rewards from "./Components/Rewards";
+import Signup from "./Components/SignUp";
+import DashboardSummary from "./Components/DashboardSummary";
+import Notifications from "./Components/Notifications";
+import Login from  "./Components/Login"
 
 const App = () => {
   return (
@@ -27,6 +31,10 @@ const App = () => {
         <Route path="/wallet" element={<Wallet/>} />
         <Route path="/bills" element={<BillPayments/>} />
         <Route path="/rewards" element={<Rewards/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/dashboard" element={<DashboardSummary/>} />
+        <Route path="/notifications" element={<Notifications/>} />
         
       </Routes>
     </Router>

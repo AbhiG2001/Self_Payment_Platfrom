@@ -1,11 +1,24 @@
 import React from "react";
 import MyProfile from "../assets/myprofile.jpeg";
+import BlurText from "./Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Animation completed!");
+};
 
 const Profile = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto">
       <div className="flex items-center justify-between mb-2">
-        <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">My Profile</h2>
+        {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">My Profile</h2> */}
+        <BlurText
+        text="My Profile"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-2xl mb-8 text-blue-600 font-mono"
+      />
         <img className="h-15 w-15 rounded-full" src={MyProfile} alt="" />
       </div>
       <div className="bg-white p-6 rounded shadow space-y-4">

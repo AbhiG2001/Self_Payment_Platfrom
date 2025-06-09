@@ -1,28 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import BlurText from "./Animations/BlurText";
-
+import "./Wallet.css"; 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
 };
 
 const Wallet = () => {
+  const [balance, setBalance] = useState(6000);
+  const [message, setMessage] = useState("");
+
+  const handleAddMoney = () => {
+    const input = prompt("Enter amount to add:");
+    const amount = parseFloat(input);
+    if (!isNaN(amount) && amount > 0) {
+      setBalance(prev => prev + amount);
+      setMessage(`₹${amount} added successfully.`);
+    } else {
+      setMessage("Invalid amount.");
+    }
+  };
+
+  const handleWithdraw = () => {
+    const input = prompt("Enter amount to withdraw:");
+    const amount = parseFloat(input);
+    if (!isNaN(amount) && amount > 0) {
+      if (amount <= balance) {
+        setBalance(prev => prev - amount);
+        setMessage(`₹${amount} withdrawn successfully.`);
+      } else {
+        setMessage("Insufficient balance.");
+      }
+    } else {
+      setMessage("Invalid amount.");
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto">
-      {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">My Wallet</h2> */}
+    <div className="wallet-container">
       <BlurText
         text="My Wallet"
         delay={100}
         animateBy="words"
         direction="top"
         onAnimationComplete={handleAnimationComplete}
-        className="text-2xl mb-8 text-blue-600 font-mono"
+        className="wallet-heading"
       />
-      <div className="bg-white p-6 rounded shadow space-y-4">
-        <div style={{fontFamily: 'Montserrat, sans-serif'}} className="text-lg">
-          Current Balance: <span className="font-bold text-green-600">₹2,500</span>
+      <div className="wallet-box">
+        <div className="wallet-balance">
+          Current Balance: <span className="wallet-amount">₹{balance}</span>
         </div>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded w-full">Add Money</button>
-        <button className="bg-gray-200 text-black px-4 py-2 rounded w-full">Withdraw</button>
+        <button className="wallet-btn add" onClick={handleAddMoney}>
+          Add Money
+        </button>
+        <button className="wallet-btn withdraw" onClick={handleWithdraw}>
+          Withdraw
+        </button>
+        {message && <p className="wallet-message">{message}</p>}
       </div>
     </div>
   );

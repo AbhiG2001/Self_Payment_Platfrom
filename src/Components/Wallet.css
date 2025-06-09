@@ -1,0 +1,99 @@
+.wallet-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wallet-heading {
+  font-size: 24px;
+  color: #2563eb;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: monospace;
+}
+
+.wallet-box {
+  background-color: white;
+  padding: 20px;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-balance {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.wallet-amount {
+  font-weight: bold;
+  color: #16a34a;
+}
+
+.wallet-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wallet-btn.add {
+  background-color: #2563eb;
+  color: white;
+}
+
+.wallet-btn.add:hover {
+  background-color: #1e40af;
+}
+
+.wallet-btn.withdraw {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.wallet-btn.withdraw:hover {
+  background-color: #292a2c;
+  color: white;
+}
+
+.wallet-message {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #059669;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .wallet-heading {
+    font-size: 20px;
+  }
+
+  .wallet-box {
+    padding: 15px;
+  }
+
+  .wallet-btn {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wallet-container {
+    padding: 15px;
+  }
+
+  .wallet-heading {
+    font-size: 18px;
+  }
+
+  .wallet-balance {
+    font-size: 16px;
+  }
+}

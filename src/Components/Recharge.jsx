@@ -26,7 +26,7 @@ const Recharge = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="bg-white p-6 rounded shadow max-w-md mx-auto">
+      <div className="bg-white p-6 rounded shadow max-w-md mx-auto h-[315px]">
         {/* <h2 style={{fontFamily:"monospace"}} className="text-2xl font-bold text-blue-600 mb-4">
           Mobile Recharge
         </h2> */}

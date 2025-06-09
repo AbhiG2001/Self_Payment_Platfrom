@@ -15,6 +15,7 @@ import Signup from "./Components/SignUp";
 import DashboardSummary from "./Components/DashboardSummary";
 import Notifications from "./Components/Notifications";
 import Login from  "./Components/Login"
+import MyProfilePicture from "./Components/MyProfilePicture";
 
 const App = () => {
   return (
@@ -35,6 +36,8 @@ const App = () => {
         <Route path="/signup" element={<Signup/>} />
         <Route path="/dashboard" element={<DashboardSummary/>} />
         <Route path="/notifications" element={<Notifications/>} />
+        <Route path="/myProfilepicture" element={<MyProfilePicture/>} />
+
         
       </Routes>
     </Router>

@@ -30,6 +30,10 @@ const offersList = [
     title: "New User Offer",
     desc: "First-time users get ₹100 cashback on their first transaction above ₹300.",
   },
+  {
+  title: "Festive Bonus Deal",
+  desc: "Celebrate the festive season with ₹75 cashback on payments above ₹750.",
+}
 ];
 
 

@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Fonarto';
-  src: url('/fonts/fonarto.ttf') format('truetype');
-  
-  font-weight: normal;
-  font-style: normal;
-}
-
 * {
-  font-family: 'Fonarto', sans-serif;
+  font-family: Montserrat;
 }

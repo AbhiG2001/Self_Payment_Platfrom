@@ -1,5 +1,5 @@
 import React from "react";
-import PaymentDashboard from "./Components/UserAccount/PaymentDashboard";
+import PaymentDashboard from "./Components/PaymentDashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import FinancialServices from "./Components/FinancialServices/FinancialServices";
@@ -60,6 +60,7 @@ import Offers from "./Components/CoreFeatures/Offers"
 import TransactionHistory from "./Components/CoreFeatures/TransactionHistory"
 import Wallet from "./Components/CoreFeatures/Wallet"
 import Profile from "./Components/CoreFeatures/Profile"
+import MyProfilePicture from "./Components/CoreFeatures/MyProfilePicture" 
 import Rewards from "./Components/CoreFeatures/Rewards"
 import SplitBill from "./Components/CoreFeatures/SplitBill"
 import NearbyOffers from "./Components/CoreFeatures/NearbyOffers"
@@ -148,6 +149,7 @@ const App = () => {
         <Route path="/transactions" element={<TransactionHistory/>} />
         <Route path="/wallet" element={<Wallet/>} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/myProfilepicture" element={<MyProfilePicture />} />
         <Route path="/rewards" element={<Rewards/>} />
         <Route path="/SplitBill" element={<SplitBill/>} />
         <Route path="/nearby-offers" element={<NearbyOffers/>} />

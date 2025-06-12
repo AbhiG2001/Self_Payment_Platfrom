@@ -36,41 +36,41 @@ const Profile = () => {
           onClick={() => navigate("/myProfilepicture")}
         />
       </div>
-      <div className="bg-white p-6 rounded-2xl shadow space-y-4 flex flex-col justify-center items-center">
+      <div className="bg-white py-6 rounded-2xl shadow space-y-4 flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
           <h2 className="text-2xl mb-1 text-red-800 font-montserrat">
             Personal Details
           </h2>
-          <label className="block font-semibold text-xl font-montserrat">
+          <label className="text-green-700 block font-semibold text-xl font-montserrat">
             Full Name
           </label>
           <input
             type="text"
             value="Abhishek Ghuge"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-full p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="bg-linear-to-bl from-red-300 via-white to-blue-300  p-2 w-60 border rounded-2xl border-gray-200 text-gray-700 text-center"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
-          <label className="block font-semibold text-xl font-montserrat">
+          <label className="text-green-700 block font-semibold text-xl font-montserrat">
             Email
           </label>
           <input
             type="email"
             value="abhishek@example.com"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-full p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-60 p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
-          <label className="block font-semibold text-xl font-montserrat">
+          <label className="text-green-700 block font-semibold text-xl font-montserrat">
             Mobile
           </label>
           <input
             type="tel"
             value="(+91)7038526960"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-full p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-60 p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
           />
         </div>
       </div>

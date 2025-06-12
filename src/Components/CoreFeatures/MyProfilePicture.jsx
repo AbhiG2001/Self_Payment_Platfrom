@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DefaultProfile from "../assets/myprofile.jpeg"
+import DefaultProfile from "../../assets/myprofile.jpeg"
 
 const MyProfilePicture = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const MyProfilePicture = () => {
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        className="bg-white p-2 border rounded-2xl text-center shadow"
+        className="bg-gray-300 p-2 border rounded-2xl text-center shadow"
       />
       <button
         onClick={() => navigate(-1)}

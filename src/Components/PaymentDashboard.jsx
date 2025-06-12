@@ -1,7 +1,8 @@
 import React from "react";
-import SplitText from "../UtilityAndGovernment/SplitText";
+import SplitText from "./UtilityAndGovernment/SplitText";
 import { useNavigate } from "react-router-dom";
-import raw from "../Bill/raw"; // Import raw data
+import raw from "./Bill/raw"; // Import raw data
+import LoginLogo from "../assets/LoginLogo.jpg"
 
 const PaymentDashboard = () => {
   const navigate = useNavigate();
@@ -23,17 +24,18 @@ const PaymentDashboard = () => {
           splitType="chars"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
+          threshold={0.1} 
           rootMargin="-100px"
           textAlign="center"
           onLetterAnimationComplete={() => console.log("Animation Complete")}
         />
-        <button
+        {/* <button
           onClick={handleLogin}
           className="text-xl bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
         >
           Login
-        </button>
+        </button> */}
+        <img onClick={handleLogin} className="h-[60px] w-[60px]" src={LoginLogo} alt="" />
       </header>
 
       {/* Display only services data */}

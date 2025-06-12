@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import BlurText from "../Animations/BlurText";
+
+const handleAnimationComplete = () => {
+  console.log("Crypto Wallet animation completed!");
+};
 
 const CryptoWallet = () => {
   const [balance, setBalance] = useState(0.0);
-  const [walletAddress, setWalletAddress] = useState("0xABCDEF1234567890");
+  const [walletAddress] = useState("0xABCDEF1234567890");
 
   const handleBuy = () => {
     alert("Redirecting to buy crypto...");
@@ -13,34 +18,42 @@ const CryptoWallet = () => {
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-50 flex flex-col items-center justify-start">
-      <h1 className="text-3xl font-bold mb-4 text-purple-700">Crypto Wallet</h1>
-      <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md space-y-4">
+    <div className="min-h-screen p-6 bg-gray-50 flex flex-col items-center">
+      <BlurText
+        text="Crypto Wallet"
+        delay={100}
+        animateBy="words"
+        direction="top"
+        onAnimationComplete={handleAnimationComplete}
+        className="text-3xl mb-6 text-purple-700 font-bold"
+      />
+
+      <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md space-y-5">
         <div>
-          <label className="block font-semibold">Wallet Address</label>
+          <label className="block font-semibold text-gray-700 mb-1">Wallet Address</label>
           <input
             type="text"
             value={walletAddress}
             readOnly
-            className="w-full p-2 border border-gray-300 rounded-lg text-sm bg-gray-100"
+            className="w-full p-2 border border-gray-300 rounded bg-gray-100 text-sm font-mono"
           />
         </div>
+
         <div>
-          <label className="block font-semibold">Wallet Balance</label>
-          <div className="text-xl text-green-600 font-mono">
-            {balance.toFixed(4)} BTC
-          </div>
+          <label className="block font-semibold text-gray-700 mb-1">Wallet Balance</label>
+          <div className="text-2xl font-mono text-green-600">{balance.toFixed(4)} BTC</div>
         </div>
-        <div className="flex justify-between mt-4">
+
+        <div className="flex justify-between">
           <button
             onClick={handleBuy}
-            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800"
+            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
           >
             Buy
           </button>
           <button
             onClick={handleSell}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-800"
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
           >
             Sell
           </button>

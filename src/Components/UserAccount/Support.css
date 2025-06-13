@@ -29,6 +29,9 @@
     font-size: 20px;
     line-height: 1.5;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin: 4px; */
 }
 .support-box {
   background-color: white;

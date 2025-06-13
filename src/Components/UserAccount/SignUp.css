@@ -19,7 +19,8 @@
 .signup-title {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 30px;
+  color: rgb(47, 47, 216);
 }
 
 .signup-input {
@@ -48,4 +49,14 @@
   .signup-box {
     padding: 16px;
   }
+}
+
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin: -12px 0 12px;
+}
+
+form .input{
+  height: 80px;
 }

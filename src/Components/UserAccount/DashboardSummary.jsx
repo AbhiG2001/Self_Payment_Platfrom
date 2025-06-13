@@ -9,14 +9,14 @@ const DashboardSummary = () => {
   ];
 
   return (
-    <div className="dashboard-summary">
+    <section className="dashboard-summary">
       {stats.map((stat, idx) => (
-        <div key={idx} className="summary-card">
+        <article key={idx} className="summary-card">
           <p className="summary-label">{stat.label}</p>
           <h3 className="summary-value">{stat.value}</h3>
-        </div>
+        </article>
       ))}
-    </div>
+    </section>
   );
 };
 

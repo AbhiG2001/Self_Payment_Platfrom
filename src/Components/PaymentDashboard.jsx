@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import SplitText from "./UtilityAndGovernment/SplitText";
 import { useNavigate } from "react-router-dom";
 import raw from "./Bill/raw"; // Import raw data
-import LoginLogo from "../assets/LoginLogo.jpg"
+import LoginLogo from "../assets/LoginLogo.jpg";
+import SplashCursor from "./Animations/SplashCursor";
+import Logo from "../assets/Logo.png";
+import { motion } from "framer-motion";
 
 const PaymentDashboard = () => {
   const navigate = useNavigate();
+  const [showImage, setShowImage] = useState(false);
 
   const handleLogin = () => {
     navigate("/login");
@@ -13,29 +17,23 @@ const PaymentDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
+      <SplashCursor />
       {/* Header */}
       <header className="w-full bg-white shadow p-4 rounded-lg flex justify-between items-center">
-        <SplitText
-          text="PayNow"
-          className="text-3xl font-semibold text-center text-red-600"
-          delay={100}
-          duration={0.6}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1} 
-          rootMargin="-100px"
-          textAlign="center"
-          onLetterAnimationComplete={() => console.log("Animation Complete")}
+        <motion.img
+          src={Logo}
+          alt="Pay Now"
+          className="mx-auto w-32 h-auto"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         />
-        {/* <button
+        <img
           onClick={handleLogin}
-          className="text-xl bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
-        >
-          Login
-        </button> */}
-        <img onClick={handleLogin} className="h-[60px] w-[60px]" src={LoginLogo} alt="" />
+          className="h-[60px] w-[60px]"
+          src={LoginLogo}
+          alt=""
+        />
       </header>
 
       {/* Display only services data */}
@@ -53,7 +51,9 @@ const PaymentDashboard = () => {
                 alt={service.title}
                 className="mx-auto h-14 mb-2 object-contain"
               />
-              <p className="font-semibold text-sm sm:text-base">{service.title}</p>
+              <p className="font-semibold text-sm sm:text-base">
+                {service.title}
+              </p>
             </div>
           ))}
         </div>

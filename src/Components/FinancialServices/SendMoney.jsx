@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BlurText from "../Animations/BlurText";
+import FS from "./FS"
 
 const handleAnimationComplete = () => {
   console.log("Animation completed!");
@@ -24,6 +25,7 @@ const Sendmoney = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto">
+      <FS/>
       {/* <h2 style={{fontFamily:"monospace"}}  className="text-2xl text-blue-600  mb-6 font-bold">Send Money</h2> */}
       <BlurText
         text="Send Money"

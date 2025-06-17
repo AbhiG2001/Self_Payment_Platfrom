@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import SplitText from "./UtilityAndGovernment/SplitText";
 import { useNavigate } from "react-router-dom";
-import raw from "./Bill/raw"; // Import raw data
+import raw from "./Bill/raw"; 
 import LoginLogo from "../assets/LoginLogo.jpg";
-import SplashCursor from "./Animations/SplashCursor";
 import Logo from "../assets/Logo.png";
 import { motion } from "framer-motion";
 
@@ -17,29 +16,26 @@ const PaymentDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <SplashCursor />
-      {/* Header */}
-      <header className="w-full bg-white shadow p-4 rounded-lg flex justify-between items-center">
+      <header className="w-full bg-white shadow p-4 rounded-lg flex items-center justify-between">
         <motion.img
           src={Logo}
           alt="Pay Now"
-          className="mx-auto w-32 h-auto"
-          initial={{ opacity: 0, y: 40 }}
+          className="mx-1 w-40 h-8"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
         <img
           onClick={handleLogin}
-          className="h-[60px] w-[60px]"
+          className="h-[70px] w-[70px]"
           src={LoginLogo}
           alt=""
         />
       </header>
 
-      {/* Display only services data */}
       <main className="mt-6">
-        <h2 className="text-2xl font-semibold text-blue-700 mb-4">Services</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-blue-700 mb-4">Services</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {raw.services.map((service, index) => (
             <div
               key={index}
@@ -49,7 +45,7 @@ const PaymentDashboard = () => {
               <img
                 src={service.icon}
                 alt={service.title}
-                className="mx-auto h-14 mb-2 object-contain"
+                className="mx-auto h-18 w-18 mb-2 object-contain"
               />
               <p className="font-semibold text-sm sm:text-base">
                 {service.title}

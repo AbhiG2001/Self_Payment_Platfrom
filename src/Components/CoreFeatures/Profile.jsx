@@ -48,7 +48,7 @@ const Profile = () => {
             type="text"
             value="Abhishek Ghuge"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300  p-2 w-60 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="p-2 w-70 border text-xl rounded-2xl bg-gray-100 border-gray-200 text-gray-700 text-center"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
@@ -59,7 +59,7 @@ const Profile = () => {
             type="email"
             value="abhishek@example.com"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-60 p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="w-70 p-2 border rounded-2xl text-xl bg-gray-100 border-gray-200 text-gray-700 text-center"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
@@ -70,7 +70,7 @@ const Profile = () => {
             type="tel"
             value="(+91)7038526960"
             readOnly
-            className="bg-linear-to-bl from-red-300 via-white to-blue-300 w-60 p-2 border rounded-2xl border-gray-200 text-gray-700 text-center"
+            className="w-70 p-2 border rounded-2xl text-xl bg-gray-100 border-gray-200 text-gray-700 text-center"
           />
         </div>
       </div>

@@ -13,7 +13,6 @@ const AadhaarServices = () => {
       return;
     }
 
-    // Simulate processing
     setMessage(`Your request for "${selectedService}" has been submitted successfully.`);
   };
 

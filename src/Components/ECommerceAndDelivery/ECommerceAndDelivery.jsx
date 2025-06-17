@@ -23,7 +23,7 @@ const ECommerceAndDelivery = () => {
 
       {/* Display Financial Services */}
       <main className="mt-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {raw.ECommerceAndDelivery.map((ECommerceAndDelivery, index) => (
             <div
               key={index}

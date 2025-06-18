@@ -7,7 +7,7 @@ const FS = () => {
         colors={["#40ffaa", " #4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
         animationSpeed={3}
         showBorder={false}
-        className="custom-class text-2xl sm:text-3xl"
+        className="custom-class text-3xl  text-blue-600"
       >
         Financial Services
       </GradientText>

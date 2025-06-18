@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BlurText from "../Animations/BlurText";
+import FS from "./FS";
 
 const handleAnimationComplete = () => {
   console.log("Crypto Wallet animation completed!");
@@ -19,13 +20,16 @@ const CryptoWallet = () => {
 
   return (
     <div className="min-h-screen p-6 bg-gray-50 flex flex-col items-center">
+      <div>
+        <FS/>
+      </div>
       <BlurText
         text="Crypto Wallet"
         delay={100}
         animateBy="words"
         direction="top"
         onAnimationComplete={handleAnimationComplete}
-        className="text-3xl mb-6 text-purple-700 font-bold"
+        className="text-2xl mb-6 text-purple-700 font-bold"
       />
 
       <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-md space-y-5">

@@ -8,7 +8,6 @@ const FinancialServices = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      {/* Header */}
       <header className="w-full bg-white shadow p-4 rounded-lg flex justify-between items-center">
         {/* <h1 className="text-3xl font-semibold text-center text-red-600">Financial Services</h1> */}
         <GradientText
@@ -21,7 +20,6 @@ const FinancialServices = () => {
         </GradientText>
       </header>
 
-      {/* Display Financial Services */}
       <main className="mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {raw.FinancialServices.map((FinancialServices, index) => (

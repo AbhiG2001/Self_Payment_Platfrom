@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState, useMemo } from "react";
 
 const buildKeyframes = (from, steps) => {
   const keys = new Set([
@@ -15,20 +15,20 @@ const buildKeyframes = (from, steps) => {
 };
 
 const BlurText = ({
-  text = '',
+  text = "",
   delay = 200,
-  className = '',
-  animateBy = 'words',
-  direction = 'top',
+  className = "",
+  animateBy = "words",
+  direction = "top",
   threshold = 0.1,
-  rootMargin = '0px',
+  rootMargin = "0px",
   animationFrom,
   animationTo,
   easing = (t) => t,
   onAnimationComplete,
   stepDuration = 0.35,
 }) => {
-  const elements = animateBy === 'words' ? text.split(' ') : text.split('');
+  const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
@@ -50,20 +50,20 @@ const BlurText = ({
 
   const defaultFrom = useMemo(
     () =>
-      direction === 'top'
-        ? { filter: 'blur(10px)', opacity: 0, y: -50 }
-        : { filter: 'blur(10px)', opacity: 0, y: 50 },
+      direction === "top"
+        ? { filter: "blur(10px)", opacity: 0, y: -50 }
+        : { filter: "blur(10px)", opacity: 0, y: 50 },
     [direction]
   );
 
   const defaultTo = useMemo(
     () => [
       {
-        filter: 'blur(5px)',
+        filter: "blur(5px)",
         opacity: 0.5,
-        y: direction === 'top' ? 5 : -5,
+        y: direction === "top" ? 5 : -5,
       },
-      { filter: 'blur(0px)', opacity: 1, y: 0 },
+      { filter: "blur(0px)", opacity: 1, y: 0 },
     ],
     [direction]
   );
@@ -77,11 +77,22 @@ const BlurText = ({
     stepCount === 1 ? 0 : i / (stepCount - 1)
   );
 
+  const gradientColors = [
+    "#40ffaa",
+    "#4079ff",
+    "#40ffaa",
+    "#4079ff",
+    "#40ffaa",
+  ];
+  const gradientStyle = {
+    backgroundImage: `linear-gradient(to right, ${gradientColors.join(", ")})`,
+    backgroundSize: "300% 100%",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+  };
+
   return (
-    <p
-      ref={ref}
-      className={`blur-text ${className} flex flex-wrap`}
-    >
+    <p ref={ref} className={`blur-text ${className} flex flex-wrap`}>
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
 
@@ -89,22 +100,23 @@ const BlurText = ({
           duration: totalDuration,
           times,
           delay: (index * delay) / 1000,
+          ease: easing,
         };
-        (spanTransition).ease = easing;
 
         return (
           <motion.span
-            className="inline-block will-change-[transform,filter,opacity]"
+            className="inline-block will-change-[transform,filter,opacity] text-transparent bg-clip-text animate-gradient"
             key={index}
             initial={fromSnapshot}
             animate={inView ? animateKeyframes : fromSnapshot}
             transition={spanTransition}
+            style={gradientStyle} // ✅ Add this line
             onAnimationComplete={
               index === elements.length - 1 ? onAnimationComplete : undefined
             }
           >
-            {segment === ' ' ? '\u00A0' : segment}
-            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
+            {segment === " " ? "\u00A0" : segment}
+            {animateBy === "words" && index < elements.length - 1 && "\u00A0"}
           </motion.span>
         );
       })}

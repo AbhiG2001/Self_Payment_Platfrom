@@ -38,7 +38,8 @@ const MutualFunds = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 max-w-md mx-auto flex flex-col items-start gap-4">
-      <div className="bg-white w-full p-4 rounded shadow-sm h-25">
+      {/* Header Section */}
+      <div className="bg-white w-full p-4 rounded shadow-sm">
         <div className="flex items-center">
           <FS />
         </div>
@@ -48,18 +49,19 @@ const MutualFunds = () => {
           animateBy="words"
           direction="top"
           onAnimationComplete={handleAnimationComplete}
-          className="text-2xl mt-2 font-mono text-transparent bg-clip-text animate-gradient"
+          className="text-2xl mb-6 text-blue-600 font-bold"
         />
       </div>
 
+      {/* Form Section */}
       <div className="bg-white w-full rounded p-4 shadow-md">
         <p className="mb-4 text-lg font-montserrat text-gray-700">
-          Invest in a wide range of mutual funds across equity, debt, and hybrid
-          categories.
+          Invest in a wide range of mutual funds across equity, debt, and hybrid categories.
         </p>
 
         <form onSubmit={handleInvest} className="space-y-5">
-          <div className="h-20">
+          {/* Fund Dropdown */}
+          <div>
             <label className="block text-gray-700 font-semibold mb-1 font-montserrat">
               Select Fund
             </label>
@@ -82,7 +84,8 @@ const MutualFunds = () => {
             )}
           </div>
 
-          <div className="h-20">
+          {/* Amount Input */}
+          <div>
             <label className="block text-gray-700 font-semibold mb-1 font-montserrat">
               Amount to Invest (₹)
             </label>
@@ -108,13 +111,11 @@ const MutualFunds = () => {
           </button>
         </form>
 
-        <div className="h-20">
-          {message && (
+        {message && (
           <p className="text-green-600 text-center font-semibold mt-4">
             {message}
           </p>
         )}
-        </div>
       </div>
     </div>
   );

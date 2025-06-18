@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BlurText from "../Animations/BlurText";
+import FS from "./FS";
 
 const handleAnimationComplete = () => {
   console.log("Stock Trading animation completed!");
@@ -33,15 +34,20 @@ const StockTrading = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center ">
+      <div className="flex flex-col self-start sm:self-center sm:w-142 md:">
+        <div className='flex items-center'>
+        <FS/>
+      </div>
       <BlurText
         text="Stock Trading"
         delay={100}
         animateBy="words"
         direction="top"
         onAnimationComplete={handleAnimationComplete}
-        className="text-3xl mb-6 text-blue-700 font-bold"
+        className="text-2xl mb-6 text-blue-700 font-bold"
       />
+      </div>
 
       <div className="bg-white shadow-lg rounded-xl p-6 w-full max-w-xl space-y-6">
         <div>
